@@ -1,0 +1,539 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+$buttonColor: #E50914;
+$buttonColorHover: #ab0810;
+$borderColor: #232323;
+$downloading: #0071eb;
+$faqColor: #2d2d2d;
+$faqColorHover: #4e4e4e;
+$loginLabel: #333333;
+$labelText: #8c8c8c;
+$focusColor: #454545;
+$error: #da7c03;
+.gray {
+    color: $labelText;
+}
+@font-face {
+    font-family: imp;
+    src: url('../public/assets/fonts/impact.ttf');
+}
+
+.impact {
+    font-family: imp;
+}
+
+.dw {
+    color: $downloading;
+}
+
+.navbar-all {
+    position: absolute;
+    padding: 1.5rem;
+}
+
+.main {
+    background-color: black;
+}
+
+.sign-in {
+    background-color: $buttonColor;
+    border-radius: 0.25rem;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    height: 32px;
+    padding: 4px 16px 4px 16px;
+
+    &:hover {
+        background-color: $buttonColorHover;
+        transition: 0.7s;
+    }
+}
+
+.top {
+    height: 93vh;
+    min-width: 100%;
+    background: url("../public/assets/images/homepage.png") center/cover no-repeat;
+}
+
+.top-title {
+    // font-size: 3rem;
+    font-weight: 900;
+}
+
+.top-title-middle {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.top-title-bottom {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.top-overlay {
+    background: rgb(0 0 0 / 10%);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+    min-width: 100%;
+    height: 100%;
+}
+
+.start-now {
+    color: white;
+}
+
+/*
+.form-floating > label {
+    color: white;
+}*/
+/*
+.form-floating > .form-control:focus ~ label {
+    color: unset !important;
+}
+*/
+.form-floating>.form-control:focus~label::after {
+    background-color: transparent !important;
+}
+
+.get-started-label {
+    width: 375px;
+    height: 56px;
+    background-color: transparent;
+}
+
+.get-started-control {
+    color: white !important;
+    background: rgba(22, 22, 22, 0.7) !important;
+    border-color: rgba(128, 128, 128, 0.7) !important;
+}
+
+.get-started-control:focus {
+    outline: none !important;
+    box-shadow: 0px 0px 0px 1px white !important
+}
+
+/*
+
+.form-floating > .form-control:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px 1px white;
+    color: white;
+}
+*/
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    color: unset !important;
+}
+
+.form-floating>.form-control:not(:placeholder-shown)~label::after {
+    background-color: transparent !important;
+    color: unset !important;
+}
+
+.form-floating>.form-control:focus~label {
+    color: unset !important;
+}
+
+#email-label {
+    color: $labelText !important;
+}
+
+.get-started {
+    height: 56px;
+    width: 200px;
+    background-color: $buttonColor;
+    border-radius: 0.25rem;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 4px 16px 4px 16px;
+
+    &:hover {
+        background-color: $buttonColorHover;
+        transition: 0.7s;
+    }
+}
+
+.panel {
+    min-width: 100%;
+    height: 600px;
+    border-top: 8px solid $borderColor;
+    background-color: black;
+}
+
+.tv-container {
+    width: 550px !important;
+    height: 350px;
+    position: relative;
+}
+
+.tv {
+    width: 500px;
+    height: 300px;
+    background: url("../public/assets/images/tv.png") center/contain no-repeat;
+    position: absolute;
+}
+
+.tv-content {
+    width: 455px;
+    position: relative;
+    height: 282px;
+    padding-top: 13px;
+    padding-left: 46px;
+
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+}
+
+.video-devices {
+    width: 100%;
+    height: 100%;
+}
+
+.content-container {
+    flex-wrap: nowrap;
+}
+
+.download-content {
+    flex-wrap: nowrap;
+}
+
+.phone {
+    width: 300px;
+    height: 400px;
+    background: url("../public/assets/images/phone.png") center/contain no-repeat;
+}
+
+.downloading {
+    width: 300px;
+    height: 100px;
+    background-color: black;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #FFF #FFF transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 2s linear infinite;
+}
+
+.loader::after,
+.loader::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent $downloading $downloading;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 1.5s linear infinite;
+    transform-origin: center center;
+}
+
+.loader::before {
+    width: 32px;
+    height: 32px;
+    border-color: #FFF #FFF transparent transparent;
+    animation: rotation 2.5s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.devices-container {
+    height: 550px !important;
+    width: 450px;
+    position: relative;
+}
+
+.devices {
+    width: 500px;
+    height: 300px;
+    background: url("../public/assets/images/devices.png") center/contain no-repeat;
+    position: relative;
+}
+
+.devices-content {
+    position: absolute;
+    width: 335px;
+    height: 300px;
+    padding-bottom: 55px;
+    padding-right: 20px;
+}
+
+.devices-watch-content {
+    flex-wrap: nowrap;
+}
+
+.kids-tv {
+    width: 100%;
+    height: 100%;
+}
+
+.FAQ {
+    min-width: 100%;
+    height: fit-content;
+    border-bottom: 8px solid $borderColor;
+    border-top: 8px solid $borderColor;
+    background-color: black;
+
+}
+
+.title-faq {
+    color: white;
+    height: 85px;
+    background-color: $faqColor;
+
+    &:hover {
+        background-color: $faqColorHover;
+        cursor: pointer;
+    }
+}
+
+.dropdown-hidden {
+    height: 0px;
+    position: relative;
+    color: white;
+    background-color: $faqColor;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.dropdown-show {
+    transition: 0.5s ease;
+    height: fit-content;
+    color: white;
+    background-color: $faqColor;
+}
+
+.faq-text {
+    text-align: center;
+    color: white;
+    font-weight: 900;
+}
+
+.close-btn {
+    transform: rotate(45deg);
+    transition: 1s;
+}
+
+.close-btn-active {
+    transition: 1s;
+    transform: rotate(180deg);
+    ;
+}
+
+.title-faq {
+    margin-bottom: 2px;
+}
+
+.questions {
+    margin-bottom: 5px;
+}
+
+.footer-link {
+    overflow: hidden;
+    padding: 5px;
+}
+
+.footer-href {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer {
+    flex-wrap: nowrap;
+    padding: 3rem;
+}
+
+.select-lang {
+    background-color: black !important;
+    color: white !important;
+    background-image: url("../public/assets/images/arrow.png") !important;
+    background-size: 13px 7px !important;
+}
+
+.login {
+    height: 100vh;
+    min-width: 100%;
+    background: url("../public/assets/images/homepage.png") center/cover no-repeat;
+}
+
+.login-bg {
+    background: rgb(0 0 0 / 10%);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+    min-width: 100%;
+    height: 100%;
+}
+
+.login-form {
+    background-color: rgba(0, 0, 0, .75);
+    border-radius: 5px;
+}
+
+.login-label {
+    background-color: $loginLabel !important;
+    color: white !important;
+}
+
+.login-label:focus {
+    background-color: $focusColor !important;
+    box-shadow: unset !important;
+}
+
+#login-label-text {
+    color: $labelText !important;
+}
+
+#sign-up {
+    height: 50px !important;
+    text-align: center;text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px;
+}
+.sign-up-now {
+    color: white;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.need-help {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.form-check-input {
+    background-color: $labelText !important;
+    border: unset !important;
+}
+.form-check-input:checked {
+    box-shadow: unset !important;
+}
+.error {
+    border-bottom: 3px solid $error !important;
+}
+.error-text {
+    color: $error;
+}
+.no-error {
+    display: none;
+}
+@media only screen and (max-width: 918px) {
+    .get-started-label {
+        width: 280px;
+    }
+
+    .top-title {
+        text-align: center;
+    }
+
+    .top-title-middle {
+        font-size: 1.125rem;
+        text-align: center;
+    }
+
+    .top-title-bottom-m {
+        font-size: 1.125rem;
+    }
+
+    .navbar-all {
+        padding: 10px !important
+    }
+
+    .logo {
+        width: 100px;
+        height: 46px;
+    }
+
+    .tv {
+        width: 300px;
+        height: 200px;
+    }
+
+    .tv-content {
+        width: 275px;
+        position: relative;
+        height: 197px;
+        padding-top: 0px;
+        padding-left: 25px;
+    }
+
+    .content-container {
+        flex-wrap: wrap;
+    }
+
+    .download-content {
+        flex-wrap: wrap;
+    }
+
+    .devices-watch-content {
+        flex-wrap: wrap;
+    }
+
+    .devices-container {
+        height: fit-content !important;
+    }
+
+    .panel {
+        height: fit-content;
+    }
+
+    .devices {
+        width: 300px;
+    }
+
+    .devices-content {
+        width: 238px;
+    }
+
+    .footer {
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+
+}
