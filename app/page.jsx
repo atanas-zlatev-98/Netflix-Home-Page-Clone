@@ -23,7 +23,7 @@ const HomePage = () => {
                 <FloatingLabel controlId="floatingInput" label="Email address" className="get-started-label mb-3" id='email-label'>
                   <Form.Control type="email" className='get-started-control' placeholder="name@example.com" />
                 </FloatingLabel>
-                <button type='submit' className='get-started d-flex ms-1 align-items-center'>Get Started <IoIosArrowForward /></button>
+                <button type='submit' className='get-started d-flex ms-1 align-items-center justify-content-center'>Get Started <IoIosArrowForward /></button>
               </Form>
 
             </Container>

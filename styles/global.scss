@@ -410,6 +410,7 @@ $error: #da7c03;
 .login-form {
     background-color: rgba(0, 0, 0, .75);
     border-radius: 5px;
+    width: 25%;
 }
 
 .login-label {
@@ -534,6 +535,9 @@ $error: #da7c03;
     .footer {
         padding: 1rem;
         flex-wrap: wrap;
+    }
+    .login-form{
+        width: 75%;
     }
 
 }
