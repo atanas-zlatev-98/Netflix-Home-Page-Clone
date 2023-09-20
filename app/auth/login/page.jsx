@@ -15,7 +15,7 @@ const Login = () => {
         <Container className='login p-0'>
             <Container className='login-bg p-0 m-0 d-flex justify-content-center align-items-center'>
 
-                <Container className='login-form w-25 p-5'>
+                <Container className='login-form p-5'>
                 <h1 className='pb-3 pt-2 text-white'>Sign In</h1>
                     <Form onSubmit={onSubmit}>
                         <Form.Group className="mb-3" controlId="formBasicPassword">

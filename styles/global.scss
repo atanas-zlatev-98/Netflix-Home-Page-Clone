@@ -51,6 +51,7 @@ $error: #da7c03;
     font-size: 14px;
     height: 32px;
     padding: 4px 16px 4px 16px;
+    text-decoration: none;
 
     &:hover {
         background-color: $buttonColorHover;
@@ -464,6 +465,7 @@ $error: #da7c03;
 .no-error {
     display: none;
 }
+
 @media only screen and (max-width: 918px) {
     .get-started-label {
         width: 280px;
